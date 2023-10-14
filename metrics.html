@@ -8,75 +8,10 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="style.css" />
+
     <title>NeuralNotes</title>
   </head>
-  <div>
-    <h1>Enter Text</h1>
-    <form id="textForm">
-        <!-- Label for the input field -->
-        <label for="user_text">Type something:</label>
-        
-        <!-- Text input field -->
-        <input type="text" id="user_text" name="user_text" placeholder="Enter text here" required>
-        
-        <!-- Submit button to send the form -->
-        <input type="submit" value="Submit">
-    </form>
-
-    <script>
-      // JavaScript code to handle form submission
-      document.getElementById('textForm').addEventListener('submit', function(e) {
-          e.preventDefault(); // Prevent the form from submitting traditionally
-
-          // Get the value entered by the user
-          const userInput = document.getElementById('user_text').value;
-
-          // Log the value to the console
-          console.log('User input: ' + userInput);
-
-          webPreferences: {
-            nodeIntegration: true
-          }
-          // console.log(process.env.API_KEY);
-
-          const { TextServiceClient } =
-            require("@google-ai/generativelanguage").v1beta2;
-
-          const { GoogleAuth } = require("google-auth-library");
-
-          const MODEL_NAME = "models/text-bison-001";
-          const API_KEY = "AIzaSyAZa7Pc_2tq0P3Xbm_-2QLwx4z1xKQ7pQ8";
-
-
-          const client = new TextServiceClient({
-            authClient: new GoogleAuth().fromAPIKey(API_KEY),
-          });
-
-          const prompt = "You are helping students by reading the notes they took in class and creating exactly 10 questions from the notes that the students will use to review. The questions are to be short answer stye. Provide the correct short answer. \nHere starts the notes: \n" + userInput;
-
-          console.log("Prompt: " + prompt);
-          client
-            .generateText({
-              model: MODEL_NAME,
-              prompt: {
-                text: prompt,
-              },
-              temperature: 0.5
-            })
-            .then((result) => {
-              // console.log(JSON.stringify(result, null, 2));
-              console.log(result[0]["candidates"][0]);
-            });
-      });
-
-      console.log("line 38");
-
-
-
-    </script>
-  </div>
   <body>
-    
     <div class="container">
       <div class="sidebar active">
         <div class="menu-btn">
@@ -95,7 +30,7 @@
           <div class="menu">
             <p class="title">Main</p>
             <ul>
-              <li class="active"> 
+              <li> 
                 <a href="index.html">
                   <i class="icon ph-bold ph-house-simple"></i>
                   <span class="text">Dashboard</span>
@@ -108,7 +43,7 @@
                   <!-- <i class="arrow ph-bold ph-caret-down"></i> -->
                 </a>
               </li>
-              <li> 
+              <li class="active"> 
                 <a href="metrics.html">
                   <i class="icon ph-bold ph-chart-bar"></i>
                   <span class="text">Metrics</span>
@@ -127,7 +62,6 @@
         </div>
       </div>
     </div>
-
     <!-- Jquery -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"

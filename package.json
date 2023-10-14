@@ -7,7 +7,13 @@
     "start": "electron ."
   },
   "keywords": [],
-
   "author": "Aidan, Kavya, Alex, Sriya",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@google-ai/generativelanguage": "^1.1.0",
+    "@google-cloud/storage": "^7.3.0",
+    "dotenv": "^16.3.1",
+    "google-auth-library": "^9.1.0"
+  },
+  "node": true
 }
