@@ -1,0 +1,12 @@
+{
+  "name": "neural-note",
+  "version": "1.0.0",
+  "description": "Hello World",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "Alex Soong",
+  "license": "ISC"
+}
