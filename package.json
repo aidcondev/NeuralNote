@@ -7,6 +7,7 @@
     "start": "electron ."
   },
   "keywords": [],
-  "author": "Alex Soong",
+
+  "author": "Aidan, Kavya, Alex, Sriya",
   "license": "MIT"
 }
