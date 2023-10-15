@@ -7,13 +7,20 @@
  padding: 0;
  box-sizing: border-box;
  font-family: "Inter", sans-serif;
+ justify-content: center;
+ 
 }
 body {
+    display: flex;
     background-color: #6f7e95;
 }
 .container{
     width: 100%;
     min-height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
 }
 .sidebar {
     position: relative;
@@ -171,4 +178,6 @@ h1{
     cursor: pointer;
     }
 
-
+.question-generator {
+    justify-content: center;
+}
